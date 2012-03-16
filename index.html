@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Test timeline</title>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="https://raw.github.com/DmitryBaranovskiy/raphael/master/raphael.js" type="text/javascript"></script>
+
+    <!-- Add popups to Raphael object (among other things. see: http://g.raphaeljs.com/ -->
+    <script src="https://raw.github.com/DmitryBaranovskiy/g.raphael/master/g.raphael.js" type="text/javascript"></script>
+
+    <script src="js/raphaeltimeline.js" type="text/javascript"></script>
+    <script>
+      $(function() {
+
+        t = new RaphaelTestTimeline();
+        var eventList = 
+          [
+            {   
+              start:'Sat, 02  Mar 2002 02:30:00 -0300',
+              title: 'Marita Ver\u00f3n es secuestrada.',
+              link: 'http://trata-dev.hhba.info/node/10',
+              description: 'Aca va la descripción detallada del secuestro.',
+            },  
+            {   
+              start: "Wed, 30  Apr 2008 00:00:00 -0300",
+              start: new Date(2020,1,1),
+              description: "Esta ley diferencia la trata de personas cuando son mayores de dieciocho (18) años y la define en su artículo 2º como “trata de mayores la captación, el transporte y/o traslado —ya sea dentro del país, desde o hacia el exterior—, la acogida o la recepción de personas mayores de DIECIOCHO (18) años de edad, con fines de explotación, cuando mediare engaño, fraude, violencia, amenaza o cualquier medio de intimidación o coerción, abuso de autoridad o de una situación de vulnerabilidad, concesión o recepción de pagos o beneficios para obtener el consentimiento de una persona que tenga autori",
+              icon: "http://cdn2.iconfinder.com/data/icons/splashyIcons/bullet_blue.png",
+              link: "/node/16",
+              title: "Ley 26.364. Prevención y sanción de la trata de personas y asistencia a sus víctimas"
+            }   
+          ];
+        t.container = 'tl-container';
+        t.setLayer( 'layer1', eventList );
+        t.redraw();
+
+      });
+    </script>
+  </head>
+  <body>
+    <div style="padding: 30px;" id="tl-container"></div>
+  </body>
+</html>
+
+<!-- vim: se ts=2 sw=2 ai expandtab: -->
